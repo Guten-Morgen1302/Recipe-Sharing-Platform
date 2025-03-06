@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Webcrumbs Plugin</title>
+    <style>
+@import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200);
+
+/*! tailwindcss v3.4.11 | MIT License | https://tailwindcss.com*/
+*,
+:after,
+:before {
+  border: 0 solid #e5e7eb;
+  box-sizing: border-box;
+}
+:after,
+:before {
+  --tw-content: "";
+}
+:host,
+html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  font-family:
+    Open Sans,
+    ui-sans-serif,
+    system-ui,
+    sans-serif,
+    Apple Color Emoji,
+    Segoe UI Emoji,
+    Segoe UI Symbol,
+    Noto Color Emoji;
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  line-height: inherit;
+  margin: 0;
+}
+hr {
+  border-top-width: 1px;
+  color: inherit;
+  height: 0;
+}
+abbr:where([title]) {
+  text-decoration: underline dotted;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+b,
+strong {
+  font-weight: bolder;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    Liberation Mono,
+    Courier New,
+    monospace;
+  font-feature-settings: normal;
+  font-size: 1em;
+  font-variation-settings: normal;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+table {
+  border-collapse: collapse;
+  border-color: inherit;
+  text-indent: 0;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font-family: inherit;
+  font-feature-settings: inherit;
+  font-size: 100%;
+  font-variation-settings: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+input:where([type="button"]),
+input:where([type="reset"]),
+input:where([type="submit"]) {
+  -webkit-appearance: button;
+  background-color: transparent;
+  background-image: none;
+}
+:-moz-focusring {
+  outline: auto;
+}
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+progress {
+  vertical-align: baseline;
+}
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+summary {
+  display: list-item;
+}
+blockquote,
+dd,
+dl,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+pre {
+  margin: 0;
+}
+fieldset {
+  margin: 0;
+}
+fieldset,
+legend {
+  padding: 0;
+}
+menu,
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+dialog {
+  padding: 0;
+}
+textarea {
+  resize: vertical;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af;
+  opacity: 1;
+}
+[role="button"],
+button {
+  cursor: pointer;
+}
+:disabled {
+  cursor: default;
+}
+audio,
+canvas,
+embed,
+iframe,
+img,
+object,
+svg,
+video {
+  display: block;
+  vertical-align: middle;
+}
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+[hidden] {
+  display: none;
+}
+*,
+:after,
+:before {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x: ;
+  --tw-pan-y: ;
+  --tw-pinch-zoom: ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position: ;
+  --tw-gradient-via-position: ;
+  --tw-gradient-to-position: ;
+  --tw-ordinal: ;
+  --tw-slashed-zero: ;
+  --tw-numeric-figure: ;
+  --tw-numeric-spacing: ;
+  --tw-numeric-fraction: ;
+  --tw-ring-inset: ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgba(59, 130, 246, 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur: ;
+  --tw-brightness: ;
+  --tw-contrast: ;
+  --tw-grayscale: ;
+  --tw-hue-rotate: ;
+  --tw-invert: ;
+  --tw-saturate: ;
+  --tw-sepia: ;
+  --tw-drop-shadow: ;
+  --tw-backdrop-blur: ;
+  --tw-backdrop-brightness: ;
+  --tw-backdrop-contrast: ;
+  --tw-backdrop-grayscale: ;
+  --tw-backdrop-hue-rotate: ;
+  --tw-backdrop-invert: ;
+  --tw-backdrop-opacity: ;
+  --tw-backdrop-saturate: ;
+  --tw-backdrop-sepia: ;
+  --tw-contain-size: ;
+  --tw-contain-layout: ;
+  --tw-contain-paint: ;
+  --tw-contain-style: ;
+}
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x: ;
+  --tw-pan-y: ;
+  --tw-pinch-zoom: ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position: ;
+  --tw-gradient-via-position: ;
+  --tw-gradient-to-position: ;
+  --tw-ordinal: ;
+  --tw-slashed-zero: ;
+  --tw-numeric-figure: ;
+  --tw-numeric-spacing: ;
+  --tw-numeric-fraction: ;
+  --tw-ring-inset: ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgba(59, 130, 246, 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur: ;
+  --tw-brightness: ;
+  --tw-contrast: ;
+  --tw-grayscale: ;
+  --tw-hue-rotate: ;
+  --tw-invert: ;
+  --tw-saturate: ;
+  --tw-sepia: ;
+  --tw-drop-shadow: ;
+  --tw-backdrop-blur: ;
+  --tw-backdrop-brightness: ;
+  --tw-backdrop-contrast: ;
+  --tw-backdrop-grayscale: ;
+  --tw-backdrop-hue-rotate: ;
+  --tw-backdrop-invert: ;
+  --tw-backdrop-opacity: ;
+  --tw-backdrop-saturate: ;
+  --tw-backdrop-sepia: ;
+  --tw-contain-size: ;
+  --tw-contain-layout: ;
+  --tw-contain-paint: ;
+  --tw-contain-style: ;
+}
+#webcrumbs .absolute {
+  position: absolute;
+}
+#webcrumbs .relative {
+  position: relative;
+}
+#webcrumbs .inset-0 {
+  inset: 0;
+}
+#webcrumbs .mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+#webcrumbs .mb-10 {
+  margin-bottom: 40px;
+}
+#webcrumbs .mb-16 {
+  margin-bottom: 64px;
+}
+#webcrumbs .mb-2 {
+  margin-bottom: 8px;
+}
+#webcrumbs .mb-3 {
+  margin-bottom: 12px;
+}
+#webcrumbs .mb-4 {
+  margin-bottom: 16px;
+}
+#webcrumbs .mb-6 {
+  margin-bottom: 24px;
+}
+#webcrumbs .mb-8 {
+  margin-bottom: 32px;
+}
+#webcrumbs .ml-1 {
+  margin-left: 4px;
+}
+#webcrumbs .mr-1 {
+  margin-right: 4px;
+}
+#webcrumbs .mr-3 {
+  margin-right: 12px;
+}
+#webcrumbs .mt-10 {
+  margin-top: 40px;
+}
+#webcrumbs .inline-block {
+  display: inline-block;
+}
+#webcrumbs .flex {
+  display: flex;
+}
+#webcrumbs .grid {
+  display: grid;
+}
+#webcrumbs .h-10 {
+  height: 40px;
+}
+#webcrumbs .h-40 {
+  height: 160px;
+}
+#webcrumbs .h-48 {
+  height: 192px;
+}
+#webcrumbs .h-56 {
+  height: 224px;
+}
+#webcrumbs .h-64 {
+  height: 256px;
+}
+#webcrumbs .h-\[500px\] {
+  height: 500px;
+}
+#webcrumbs .h-full {
+  height: 100%;
+}
+#webcrumbs .w-1\/3 {
+  width: 33.333333%;
+}
+#webcrumbs .w-10 {
+  width: 40px;
+}
+#webcrumbs .w-2\/3 {
+  width: 66.666667%;
+}
+#webcrumbs .w-\[1200px\] {
+  width: 1200px;
+}
+#webcrumbs .w-fit {
+  width: fit-content;
+}
+#webcrumbs .w-full {
+  width: 100%;
+}
+#webcrumbs .max-w-2xl {
+  max-width: 42rem;
+}
+#webcrumbs .transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+#webcrumbs .cursor-pointer {
+  cursor: pointer;
+}
+#webcrumbs .grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+#webcrumbs .grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+#webcrumbs .flex-row {
+  flex-direction: row;
+}
+#webcrumbs .flex-col {
+  flex-direction: column;
+}
+#webcrumbs .items-center {
+  align-items: center;
+}
+#webcrumbs .justify-center {
+  justify-content: center;
+}
+#webcrumbs .justify-between {
+  justify-content: space-between;
+}
+#webcrumbs .gap-4 {
+  gap: 16px;
+}
+#webcrumbs .gap-6 {
+  gap: 24px;
+}
+#webcrumbs .gap-8 {
+  gap: 32px;
+}
+#webcrumbs .overflow-hidden {
+  overflow: hidden;
+}
+#webcrumbs .rounded-2xl {
+  border-radius: 48px;
+}
+#webcrumbs .rounded-full {
+  border-radius: 9999px;
+}
+#webcrumbs .rounded-xl {
+  border-radius: 36px;
+}
+#webcrumbs .bg-gray-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+#webcrumbs .bg-green-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 252 231 / var(--tw-bg-opacity));
+}
+#webcrumbs .bg-indigo-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(79 70 229 / var(--tw-bg-opacity));
+}
+#webcrumbs .bg-pink-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 72 153 / var(--tw-bg-opacity));
+}
+#webcrumbs .bg-purple-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 232 255 / var(--tw-bg-opacity));
+}
+#webcrumbs .bg-red-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 226 226 / var(--tw-bg-opacity));
+}
+#webcrumbs .bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+#webcrumbs .bg-yellow-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 249 195 / var(--tw-bg-opacity));
+}
+#webcrumbs .bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+#webcrumbs .from-indigo-600 {
+  --tw-gradient-from: #4f46e5 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgba(79, 70, 229, 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+#webcrumbs .from-orange-500 {
+  --tw-gradient-from: #f97316 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgba(249, 115, 22, 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+#webcrumbs .from-pink-50 {
+  --tw-gradient-from: #fdf2f8 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgba(253, 242, 248, 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+#webcrumbs .from-purple-900 {
+  --tw-gradient-from: #581c87 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgba(88, 28, 135, 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+#webcrumbs .to-indigo-50 {
+  --tw-gradient-to: #eef2ff var(--tw-gradient-to-position);
+}
+#webcrumbs .to-indigo-800 {
+  --tw-gradient-to: #3730a3 var(--tw-gradient-to-position);
+}
+#webcrumbs .to-pink-500 {
+  --tw-gradient-to: #ec4899 var(--tw-gradient-to-position);
+}
+#webcrumbs .to-purple-600 {
+  --tw-gradient-to: #9333ea var(--tw-gradient-to-position);
+}
+#webcrumbs .object-cover {
+  object-fit: cover;
+}
+#webcrumbs .p-10 {
+  padding: 40px;
+}
+#webcrumbs .p-4 {
+  padding: 16px;
+}
+#webcrumbs .p-6 {
+  padding: 24px;
+}
+#webcrumbs .px-2 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+#webcrumbs .px-4 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+#webcrumbs .px-8 {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+#webcrumbs .py-1 {
+  padding-bottom: 4px;
+  padding-top: 4px;
+}
+#webcrumbs .py-16 {
+  padding-bottom: 64px;
+  padding-top: 64px;
+}
+#webcrumbs .py-3 {
+  padding-bottom: 12px;
+  padding-top: 12px;
+}
+#webcrumbs .text-center {
+  text-align: center;
+}
+#webcrumbs .font-sans {
+  font-family:
+    Open Sans,
+    ui-sans-serif,
+    system-ui,
+    sans-serif,
+    Apple Color Emoji,
+    Segoe UI Emoji,
+    Segoe UI Symbol,
+    Noto Color Emoji;
+}
+#webcrumbs .text-3xl {
+  font-size: 30px;
+  line-height: 36px;
+}
+#webcrumbs .text-5xl {
+  font-size: 48px;
+  line-height: 52.800000000000004px;
+}
+#webcrumbs .text-lg {
+  font-size: 18px;
+  line-height: 27px;
+}
+#webcrumbs .text-sm {
+  font-size: 14px;
+  line-height: 21px;
+}
+#webcrumbs .text-xl {
+  font-size: 20px;
+  line-height: 28px;
+}
+#webcrumbs .text-xs {
+  font-size: 12px;
+  line-height: 19.200000000000003px;
+}
+#webcrumbs .font-bold {
+  font-weight: 700;
+}
+#webcrumbs .font-medium {
+  font-weight: 500;
+}
+#webcrumbs .font-semibold {
+  font-weight: 600;
+}
+#webcrumbs .text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+#webcrumbs .text-gray-600 {
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+#webcrumbs .text-green-800 {
+  --tw-text-opacity: 1;
+  color: rgb(22 101 52 / var(--tw-text-opacity));
+}
+#webcrumbs .text-indigo-600 {
+  --tw-text-opacity: 1;
+  color: rgb(79 70 229 / var(--tw-text-opacity));
+}
+#webcrumbs .text-indigo-700 {
+  --tw-text-opacity: 1;
+  color: rgb(67 56 202 / var(--tw-text-opacity));
+}
+#webcrumbs .text-purple-800 {
+  --tw-text-opacity: 1;
+  color: rgb(107 33 168 / var(--tw-text-opacity));
+}
+#webcrumbs .text-red-800 {
+  --tw-text-opacity: 1;
+  color: rgb(153 27 27 / var(--tw-text-opacity));
+}
+#webcrumbs .text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+#webcrumbs .text-yellow-500 {
+  --tw-text-opacity: 1;
+  color: rgb(234 179 8 / var(--tw-text-opacity));
+}
+#webcrumbs .text-yellow-800 {
+  --tw-text-opacity: 1;
+  color: rgb(133 77 14 / var(--tw-text-opacity));
+}
+#webcrumbs .opacity-30 {
+  opacity: 0.3;
+}
+#webcrumbs .opacity-90 {
+  opacity: 0.9;
+}
+#webcrumbs .shadow-lg {
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
+    0 4px 6px -4px var(--tw-shadow-color);
+}
+#webcrumbs .shadow-lg,
+#webcrumbs .shadow-md {
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+#webcrumbs .shadow-md {
+  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),
+    0 2px 4px -2px var(--tw-shadow-color);
+}
+#webcrumbs .shadow-xl {
+  --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
+    0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+#webcrumbs .transition-all {
+  transition-duration: 0.15s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+#webcrumbs .transition-colors {
+  transition-duration: 0.15s;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+#webcrumbs .transition-transform {
+  transition-duration: 0.15s;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+#webcrumbs .duration-300 {
+  transition-duration: 0.3s;
+}
+#webcrumbs .duration-500 {
+  transition-duration: 0.5s;
+}
+#webcrumbs {
+  font-family: Open Sans !important;
+  font-size: 16px !important;
+}
+#webcrumbs .hover\:-translate-y-1:hover {
+  --tw-translate-y: -4px;
+}
+#webcrumbs .hover\:-translate-y-1:hover,
+#webcrumbs .hover\:-translate-y-2:hover {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+#webcrumbs .hover\:-translate-y-2:hover {
+  --tw-translate-y: -8px;
+}
+#webcrumbs .hover\:scale-105:hover {
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+}
+#webcrumbs .hover\:scale-105:hover,
+#webcrumbs .hover\:scale-110:hover {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+#webcrumbs .hover\:scale-110:hover {
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+}
+#webcrumbs .hover\:bg-gray-100:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+#webcrumbs .hover\:bg-indigo-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(67 56 202 / var(--tw-bg-opacity));
+}
+#webcrumbs .hover\:bg-pink-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(219 39 119 / var(--tw-bg-opacity));
+}
+#webcrumbs .hover\:from-orange-600:hover {
+  --tw-gradient-from: #ea580c var(--tw-gradient-from-position);
+  --tw-gradient-to: rgba(234, 88, 12, 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+#webcrumbs .hover\:to-pink-600:hover {
+  --tw-gradient-to: #db2777 var(--tw-gradient-to-position);
+}
+#webcrumbs .hover\:text-indigo-800:hover {
+  --tw-text-opacity: 1;
+  color: rgb(55 48 163 / var(--tw-text-opacity));
+}
+#webcrumbs .hover\:shadow-lg:hover {
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
+    0 4px 6px -4px var(--tw-shadow-color);
+}
+#webcrumbs .hover\:shadow-lg:hover,
+#webcrumbs .hover\:shadow-xl:hover {
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+#webcrumbs .hover\:shadow-xl:hover {
+  --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
+    0 8px 10px -6px var(--tw-shadow-color);
+}
+#webcrumbs :is(.group:hover .group-hover\:scale-110) {
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+@media (min-width: 768px) {
+  #webcrumbs .md\:flex {
+    display: flex;
+  }
+  #webcrumbs .md\:h-auto {
+    height: auto;
+  }
+  #webcrumbs .md\:w-1\/2 {
+    width: 50%;
+  }
+  #webcrumbs .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  #webcrumbs .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  #webcrumbs .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  #webcrumbs .md\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+      body {
+        line-height: inherit;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        min-width: 100vw;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #ffffff, #d4d4d4);
+      }
+    </style>
+  </head>
+  <body>
+<div id="webcrumbs"><div class="w-[1200px] font-sans bg-white overflow-hidden">  <section class="relative h-[500px] rounded-xl overflow-hidden mb-16"> <div class="absolute inset-0 bg-gradient-to-r from-purple-900 to-indigo-800"></div> <div class="absolute inset-0 opacity-30 bg-[url(&#x27;https://images.unsplash.com/photo-1546241072-48010ad2862c?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1200&amp;q=80&#x27;)]"></div> <div class="relative h-full flex flex-col justify-center items-center text-center text-white px-8"> <h1 class="text-5xl font-bold mb-4 transform transition-all duration-500 hover:scale-105">Explore a World of Flavors!</h1> <p class="text-xl max-w-2xl mb-8 opacity-90">Embark on a culinary adventure with Flavour Fusion. Discover new flavors, mix them up, and create unique taste experiences.</p> <button class="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white font-bold py-3 px-8 rounded-full transform transition-all duration-300 hover:scale-105 hover:shadow-lg"> Start Exploring </button> </div> </section>  <section class="mb-16 px-4"> <div class="text-center mb-10"> <h2 class="text-3xl font-bold mb-3">Featured Flavor Combos</h2> <p class="text-gray-600 max-w-2xl mx-auto">Check out our curated flavor pairings that are taking the culinary world by storm!</p> </div> <div class="grid grid-cols-1 md:grid-cols-3 gap-8"> <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"> <div class="h-56 overflow-hidden"> <img src="https://images.unsplash.com/photo-1582673937754-8d0cfed5412c?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="Spicy Mango &amp; Lime" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"/> </div> <div class="p-6"> <h3 class="text-xl font-bold mb-2">Spicy Mango &amp; Lime</h3> <p class="text-gray-600 mb-4">A tantalizing blend of sweet mango with zesty lime and a hint of spice creates an unforgettable tropical experience.</p> <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800 transition-colors flex items-center"> Explore Recipes <span class="material-symbols-outlined ml-1">arrow_forward</span> </a> </div> </div> <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"> <div class="h-56 overflow-hidden"> <img src="https://images.unsplash.com/photo-1563452072-2af45ddc5ae6?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="Strawberry &amp; Basil" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"/> </div> <div class="p-6"> <h3 class="text-xl font-bold mb-2">Strawberry &amp; Basil</h3> <p class="text-gray-600 mb-4">The sweet juiciness of strawberries pairs surprisingly well with the aromatic herbal notes of fresh basil.</p> <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800 transition-colors flex items-center"> Explore Recipes <span class="material-symbols-outlined ml-1">arrow_forward</span> </a> </div> </div> <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"> <div class="h-56 overflow-hidden"> <img src="https://images.unsplash.com/photo-1549007953-2f2dc0b24019?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="Dark Chocolate &amp; Chili" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"/> </div> <div class="p-6"> <h3 class="text-xl font-bold mb-2">Dark Chocolate &amp; Chili</h3> <p class="text-gray-600 mb-4">The rich, deep flavor of dark chocolate gets an exciting kick from the subtle heat of chili, creating a sophisticated treat.</p> <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800 transition-colors flex items-center"> Explore Recipes <span class="material-symbols-outlined ml-1">arrow_forward</span> </a> </div> </div> </div> <div class="text-center mt-10"> <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:shadow-lg transform hover:scale-105"> Discover More Flavor Combos </button> </div> </section>  <section class="mb-16 px-4 bg-gray-50 py-16 rounded-xl"> <div class="text-center mb-10"> <h2 class="text-3xl font-bold mb-3">Explore Flavors by Category</h2> <p class="text-gray-600 max-w-2xl mx-auto">Dive deeper into flavors based on your cravings and culinary needs.</p> </div> <div class="grid grid-cols-2 md:grid-cols-5 gap-6"> <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer group"> <div class="h-40 overflow-hidden"> <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=300&amp;q=80" alt="Sweet &amp; Savory" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/> </div> <div class="p-4 text-center"> <h3 class="font-bold">Sweet &amp; Savory</h3> </div> </div> <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer group"> <div class="h-40 overflow-hidden"> <img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=300&amp;q=80" alt="Bold &amp; Spicy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/> </div> <div class="p-4 text-center"> <h3 class="font-bold">Bold &amp; Spicy</h3> </div> </div> <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer group"> <div class="h-40 overflow-hidden"> <img src="https://images.unsplash.com/photo-1528821128474-27f963b062bf?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=300&amp;q=80" alt="Fruity &amp; Zesty" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/> </div> <div class="p-4 text-center"> <h3 class="font-bold">Fruity &amp; Zesty</h3> </div> </div> <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer group"> <div class="h-40 overflow-hidden"> <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=300&amp;q=80" alt="Comfort Foods" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/> </div> <div class="p-4 text-center"> <h3 class="font-bold">Comfort Foods</h3> </div> </div> <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer group"> <div class="h-40 overflow-hidden"> <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=300&amp;q=80" alt="Healthy &amp; Fresh" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/> </div> <div class="p-4 text-center"> <h3 class="font-bold">Healthy &amp; Fresh</h3> </div> </div> </div> </section>  <section class="mb-16 px-4"> <div class="text-center mb-10"> <h2 class="text-3xl font-bold mb-3">Trending Flavors Right Now</h2> <p class="text-gray-600 max-w-2xl mx-auto">These flavor combinations are making waves in the culinary world—don&#x27;t miss out!</p> </div> <div class="grid grid-cols-1 md:grid-cols-2 gap-8"> <div class="bg-white rounded-xl overflow-hidden shadow-lg flex hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"> <div class="w-1/3 overflow-hidden"> <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=300&amp;q=80" alt="Maple &amp; Bacon" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"/> </div> <div class="w-2/3 p-6"> <div class="flex items-center mb-2"> <span class="material-symbols-outlined text-yellow-500 mr-1">star</span> <span class="material-symbols-outlined text-yellow-500 mr-1">star</span> <span class="material-symbols-outlined text-yellow-500 mr-1">star</span> <span class="material-symbols-outlined text-yellow-500 mr-1">star</span> <span class="material-symbols-outlined text-yellow-500 mr-1">star_half</span> </div> <h3 class="text-xl font-bold mb-2">Maple &amp; Bacon</h3> <p class="text-gray-600 mb-4">Sweet, smoky, and savory all at once. This combination is taking breakfast dishes to a whole new level.</p> <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800 transition-colors flex items-center"> Try it now <span class="material-symbols-outlined ml-1">arrow_forward</span> </a> </div> </div> <div class="bg-white rounded-xl overflow-hidden shadow-lg flex hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"> <div class="w-1/3 overflow-hidden"> <img src="https://images.unsplash.com/photo-1576506295286-5cda18df43e7?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=300&amp;q=80" alt="Lavender &amp; Honey" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"/> </div> <div class="w-2/3 p-6"> <div class="flex items-center mb-2"> <span class="material-symbols-outlined text-yellow-500 mr-1">star</span> <span class="material-symbols-outlined text-yellow-500 mr-1">star</span> <span class="material-symbols-outlined text-yellow-500 mr-1">star</span> <span class="material-symbols-outlined text-yellow-500 mr-1">star</span> <span class="material-symbols-outlined text-yellow-500 mr-1">star</span> </div> <h3 class="text-xl font-bold mb-2">Lavender &amp; Honey</h3> <p class="text-gray-600 mb-4">A delicate floral note with natural sweetness makes this pairing perfect for desserts and beverages.</p> <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800 transition-colors flex items-center"> Try it now <span class="material-symbols-outlined ml-1">arrow_forward</span> </a> </div> </div> </div> <div class="text-center mt-10"> <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:shadow-lg transform hover:scale-105"> Try the Trending Flavors </button> </div> </section>  <section class="mb-16 px-4 bg-gradient-to-r from-pink-50 to-indigo-50 py-16 rounded-xl"> <div class="text-center mb-10"> <h2 class="text-3xl font-bold mb-3">Flavor Fusion by You!</h2> <p class="text-gray-600 max-w-2xl mx-auto">Join the Flavor Fusion community and share your own delicious flavor combinations.</p> </div> <div class="grid grid-cols-1 md:grid-cols-3 gap-6"> <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"> <div class="h-48 overflow-hidden"> <img src="https://images.unsplash.com/photo-1506368249639-73a05d6f6488?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="User Creation" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"/> </div> <div class="p-6"> <div class="flex items-center mb-4"> <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="w-10 h-10 rounded-full mr-3"/> <div> <h4 class="font-semibold">Emma S.</h4> <p class="text-gray-500 text-sm">Food Blogger</p> </div> </div> <h3 class="text-lg font-bold mb-2">Roasted Garlic &amp; White Chocolate</h3> <p class="text-gray-600 mb-4">&quot;The sweetness of white chocolate with the depth of roasted garlic creates an unexpected harmony of flavors!&quot;</p> </div> </div> <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"> <div class="h-48 overflow-hidden"> <img src="https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="User Creation" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"/> </div> <div class="p-6"> <div class="flex items-center mb-4"> <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="w-10 h-10 rounded-full mr-3"/> <div> <h4 class="font-semibold">James T.</h4> <p class="text-gray-500 text-sm">Home Chef</p> </div> </div> <h3 class="text-lg font-bold mb-2">Cardamom &amp; Blueberry</h3> <p class="text-gray-600 mb-4">&quot;The warm spice of cardamom perfectly complements the tartness of fresh blueberries in this delightful pairing.&quot;</p> </div> </div> <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"> <div class="h-48 overflow-hidden"> <img src="https://images.unsplash.com/photo-1556679343-c1bf22240a17?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="User Creation" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"/> </div> <div class="p-6"> <div class="flex items-center mb-4"> <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="User" class="w-10 h-10 rounded-full mr-3"/> <div> <h4 class="font-semibold">Sophia R.</h4> <p class="text-gray-500 text-sm">Pastry Chef</p> </div> </div> <h3 class="text-lg font-bold mb-2">Rose &amp; Pistachio</h3> <p class="text-gray-600 mb-4">&quot;A Middle Eastern inspiration that brings floral notes with nutty earthiness. Perfect for desserts!&quot;</p> </div> </div> </div> <div class="text-center mt-10"> <button class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:shadow-lg transform hover:scale-105"> Share Your Creation </button> </div> </section>  <section class="mb-16 px-4"> <div class="text-center mb-10"> <h2 class="text-3xl font-bold mb-3">Flavor-Packed Recipes</h2> <p class="text-gray-600 max-w-2xl mx-auto">Get inspired by our easy-to-follow recipes that highlight exciting flavor combinations.</p> </div> <div class="grid grid-cols-1 md:grid-cols-4 gap-6"> <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer group"> <div class="h-48 overflow-hidden"> <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=300&amp;q=80" alt="Recipe" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/> </div> <div class="p-4"> <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded-full mb-2">Dessert</span> <h3 class="font-bold mb-2">Strawberry Basil Sorbet</h3> <p class="text-gray-600 text-sm mb-3">A refreshing frozen treat highlighting the Strawberry &amp; Basil combo.</p> <div class="flex justify-between items-center"> <span class="text-gray-500 text-sm flex items-center"> <span class="material-symbols-outlined text-sm mr-1">schedule</span> 25 mins </span> <a href="#" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium transition-colors">View Recipe</a> </div> </div> </div> <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer group"> <div class="h-48 overflow-hidden"> <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=300&amp;q=80" alt="Recipe" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/> </div> <div class="p-4"> <span class="inline-block bg-red-100 text-red-800 text-xs font-semibold px-2 py-1 rounded-full mb-2">Main Course</span> <h3 class="font-bold mb-2">Honey Lavender Glazed Salmon</h3> <p class="text-gray-600 text-sm mb-3">A gourmet dish featuring our trending Lavender &amp; Honey combination.</p> <div class="flex justify-between items-center"> <span class="text-gray-500 text-sm flex items-center"> <span class="material-symbols-outlined text-sm mr-1">schedule</span> 40 mins </span> <a href="#" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium transition-colors">View Recipe</a> </div> </div> </div> <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer group"> <div class="h-48 overflow-hidden"> <img src="https://images.unsplash.com/photo-1555126634-323283e090fa?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=300&amp;q=80" alt="Recipe" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/> </div> <div class="p-4"> <span class="inline-block bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded-full mb-2">Appetizer</span> <h3 class="font-bold mb-2">Spicy Mango Lime Shrimp Cups</h3> <p class="text-gray-600 text-sm mb-3">Bite-sized appetizers featuring our popular Spicy Mango &amp; Lime pairing.</p> <div class="flex justify-between items-center"> <span class="text-gray-500 text-sm flex items-center"> <span class="material-symbols-outlined text-sm mr-1">schedule</span> 35 mins </span> <a href="#" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium transition-colors">View Recipe</a> </div> </div> </div> <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer group"> <div class="h-48 overflow-hidden"> <img src="https://images.unsplash.com/photo-1570145820259-b5b80c5c8bd6?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=300&amp;q=80" alt="Recipe" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/> </div> <div class="p-4"> <span class="inline-block bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-1 rounded-full mb-2">Drink</span> <h3 class="font-bold mb-2">Chili Chocolate Espresso Martini</h3> <p class="text-gray-600 text-sm mb-3">A sophisticated cocktail highlighting Dark Chocolate &amp; Chili with coffee notes.</p> <div class="flex justify-between items-center"> <span class="text-gray-500 text-sm flex items-center"> <span class="material-symbols-outlined text-sm mr-1">schedule</span> 15 mins </span> <a href="#" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium transition-colors">View Recipe</a> </div> </div> </div> </div> <div class="text-center mt-10"> <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:shadow-lg transform hover:scale-105"> See All Recipes </button> </div> </section>  <section class="mb-16 px-4"> <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl overflow-hidden shadow-xl"> <div class="md:flex"> <div class="md:w-1/2 p-10 flex flex-col justify-center text-white"> <h2 class="text-3xl font-bold mb-4">Find Your Perfect Flavor Match</h2> <p class="mb-6 opacity-90">Take our quiz to discover your unique flavor profile and the perfect combos for you.</p> <button class="bg-white text-indigo-700 hover:bg-gray-100 py-3 px-8 rounded-full w-fit font-bold transition-all duration-300 hover:shadow-lg transform hover:scale-105"> Take the Quiz </button> </div> <div class="md:w-1/2 relative h-64 md:h-auto overflow-hidden"> </div></div></div></section></div></div>
+
+
+  </body>
+</html>
